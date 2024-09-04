@@ -1,141 +1,136 @@
-# Next.js React Web Project Template (App directory, Typescript, Sass, Tailwind Css, SVGR, Prettier, Storybook, SEO, RSC helpers and other generally used features and tools in production.)
+Aqui está o **README.md** atualizado para refletir as suas mudanças e a estrutura atualizada de pastas do seu projeto.
 
-This is a React [Next.js](https://nextjs.org/) project bootstrapped
-with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).To the default setup
-have been added:
+---
 
-- [Prettier](https://prettier.io/) - Popular opinionated code formatter.
-- [Sass](https://sass-lang.com/guide) - Popular Css extension.
-- [Tailwind Css](https://tailwindcss.com/) - Utility-first CSS framework.
-  Added to utilities such as :
-  - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
-  - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss) A Prettier plugin that automatically sorts Tailwind classes based on recommended class order.
-- [Storybook](https://storybook.js.org/) - Frontend workshop for previewing and testing your UI components and pages in isolation.
-- [SVGR](https://react-svgr.com/) - Tool box for using SVGs in React directly as components like in Create React App.
-- Automatic [Sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) generation with [next-sitemap](https://www.npmjs.com/package/next-sitemap).
-- [Conventional Commits Linting](https://www.conventionalcommits.org/en/v1.0.0/#summary) - Set of rules for enforcing
-  the creation of more human and machine-readable explicit commits.
+# Next.js React Web Project - WaiZap
 
-## Quick Start
+Este é um projeto React baseado em [Next.js](https://nextjs.org/) criado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). A configuração padrão foi ajustada para incluir:
 
-Start using this template with [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
+- [Prettier](https://prettier.io/): Formatador de código opinativo.
+- [Sass](https://sass-lang.com/guide): Extensão popular do CSS.
+- [Tailwind CSS](https://tailwindcss.com/): Framework CSS utilitário.
+  - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): Função utilitária para combinar classes Tailwind sem conflitos de estilo.
+  - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): Plugin do Prettier que organiza automaticamente as classes do Tailwind na ordem recomendada.
+- [Storybook](https://storybook.js.org/): Ferramenta para testar e visualizar componentes de UI em isolamento.
+- [SVGR](https://react-svgr.com/): Ferramenta para usar SVGs diretamente como componentes React.
+- Geração automática de [Sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) com [next-sitemap](https://www.npmjs.com/package/next-sitemap).
+- Linting de commits com [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
+
+## Como Começar
+
+Use o [Create Next App](https://nextjs.org/docs/api-reference/create-next-app) para iniciar o projeto:
 
 ```bash
 yarn create next-app -e https://github.com/ouedyan/nextjs-template
 ```
 
-Then check all TODO sections (by doing a global search for e.g.) to complete the project's setup.
-You can delete this README and use the simplified README.prod instead in your project.
+Verifique todas as seções TODO no projeto para completar a configuração.
 
 ## Scripts
 
-Run the development server
+- **Desenvolvimento**: Execute o servidor de desenvolvimento.
 
-```bash
-yarn dev
+  ```bash
+  yarn dev
+  ```
+
+- **Build de Produção**: Compile o projeto para produção.
+
+  ```bash
+  yarn build
+  ```
+
+- **Execução em Produção**: Rode o projeto em modo de produção.
+
+  ```bash
+  yarn start
+  ```
+
+- **Storybook**: Inicie o servidor do Storybook.
+
+  ```bash
+  yarn storybook
+  ```
+
+- **Build do Storybook**: Construa o Storybook como uma aplicação web estática.
+
+  ```bash
+  yarn build-storybook
+  ```
+
+## Estrutura de Pastas do Projeto
+
+Abaixo está uma visão geral da estrutura de pastas do projeto atualizada:
+
 ```
+📂 app
+  📂 api
+    📄 {apiEndpoint}.ts
+  📄 layout.tsx
+  📄 page.tsx
+  📄 not-found.tsx
+  📄 error.tsx
+  📄 favicon.ico
 
-Building for production
-
-```bash
-yarn build
-```
-
-Run in production mode
-
-```bash
-yarn start
-```
-
-Run Storybook server
-
-```bash
-yarn storybook
-```
-
-Build Storybook as a static web application
-
-```bash
-yarn build-storybook
-```
-
-## Project directory structure
-
-Main folder structure
-
-```
 📂 components
+  📂 common
   📂 hooks
-  utils.ts
-  ...📄 {Component}.tsx
-  ...📂 {page}
-     ...📄 {Component}.tsx
+  📂 layout
+  📄 {Component}.tsx
 
 📂 lib
   📂 data
-    ...📄 {service}.ts
-  📂 types
-    ...📄 {type}.ts
+    📄 atomStore.ts
   📂 utils
-    ...📄 {context}.ts
+    📄 {utilityFunction}.ts
 
-📂 app
-  📂 test
-    📂 api
-      ...📄 {apiPath}.ts
-  ...📄 {path}.ts
-  layout.tsx
-  page.client.tsx
-  page.tsx
-  not-found.tsx
-  error.tsx
-  global-error.tsx
-  favicon.ico
-  ...📄 favicon-{size}x{size}.png
-  📄 browserconfig.xml
-  📄 site.webmanifest
-  ...📄 {other-pwa-assets}
-  📄 robots.txt
+📂 pages
+  📂 api
+  📄 _app.js
+  📄 _document.js
+  📄 index.tsx
 
 📂 public
   📂 favicons
   📂 icons
   📂 images
 
-📂 stories
-  📂 examples
-  ...📄 {Component}.stories.tsx
-  ...📂 {page}
-     ...📄 {Component}.stories.tsx
-
 📂 styles
   📄 globals.scss
 
 📂 i18n
   📂 locales
-    ...📂 {locale}
-      📄 common.ts
-      ...📄 {namespace}.ts
+    📄 {locale}.json
+
+📂 stories
+  📂 examples
+    📄 {Component}.stories.tsx
+
+📄 tsconfig.json
+📄 next.config.js
+📄 tailwind.config.js
 ```
 
-## Project's main tech stack useful resources
+### Principais Tecnologias Utilizadas:
 
-### React
+1. **React**:
 
-- [W3Schools React tutorial](https://www.w3schools.com/react) - Step-by-step guide to learning React.
-- [React new Docs](https://beta.reactjs.org/learn) - react official documentation (in beta).
-- [React old Docs](https://reactjs.org/docs) - react official documentation (to be replaced).
+   - [W3Schools React tutorial](https://www.w3schools.com/react)
+   - [React Docs](https://reactjs.org/docs)
 
-### Next.js
+2. **Next.js**:
 
-- [Learn Next.js](https://nextjs.org/learn) - the best way to start with next.js if you are new.
-- [Next.js Docs](https://nextjs.org/docs) - learn about Next.js features and API.
+   - [Aprenda Next.js](https://nextjs.org/learn)
+   - [Documentação do Next.js](https://nextjs.org/docs)
 
-### Tailwind Css
+3. **Tailwind CSS**:
 
-- [Tailwind Docs](https://tailwindcss.com/docs) - Tailwind Css official documentation and reference.
-- [Tailwind with Next.js guide](https://tailwindcss.com/docs/guides/nextjs) - Tailwind installation guide with Next.js.
+   - [Documentação Tailwind](https://tailwindcss.com/docs)
+   - [Guia de Instalação do Tailwind com Next.js](https://tailwindcss.com/docs/guides/nextjs)
 
-### Typescript
+4. **TypeScript**:
+   - [W3Schools TypeScript tutorial](https://www.w3schools.com/typescript/)
 
-- [W3Schools Typescript tutorial](https://www.w3schools.com/typescript/) - Step-by-step guide to learning Typescript.
+---
+
+Esse README agora reflete as mudanças que você implementou na estrutura do seu projeto, enquanto mantém as principais funcionalidades e scripts relacionados ao desenvolvimento e construção do aplicativo. Se precisar de mais alguma modificação ou ajuste, estou à disposição!
