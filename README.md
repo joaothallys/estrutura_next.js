@@ -1,7 +1,3 @@
-Aqui está o **README.md** atualizado para refletir as suas mudanças e a estrutura atualizada de pastas do seu projeto.
-
----
-
 # Next.js React Web Project - WaiZap
 
 Este é um projeto React baseado em [Next.js](https://nextjs.org/) criado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). A configuração padrão foi ajustada para incluir:
@@ -130,7 +126,3 @@ Abaixo está uma visão geral da estrutura de pastas do projeto atualizada:
 
 4. **TypeScript**:
    - [W3Schools TypeScript tutorial](https://www.w3schools.com/typescript/)
-
----
-
-Esse README agora reflete as mudanças que você implementou na estrutura do seu projeto, enquanto mantém as principais funcionalidades e scripts relacionados ao desenvolvimento e construção do aplicativo. Se precisar de mais alguma modificação ou ajuste, estou à disposição!
