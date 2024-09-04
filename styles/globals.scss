@@ -1,12 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// styles/globals.scss
 
-* {
-  box-sizing: border-box;
+// Importando variáveis primeiro
+@import './utils/variables';
+
+// Agora, importe os componentes que utilizam essas variáveis
+@import './components/button';
+
+// Importando estilos base, mixins, etc.
+@import './base/reset';
+@import './base/typography';
+@import './base/base';
+
+body {
+  font-family: Arial, sans-serif;
 }
 
-svg {
-  flex-shrink: 0;
-  -webkit-flex-shrink: 0;
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-gray-100 {
+  background-color: #f7fafc;
 }

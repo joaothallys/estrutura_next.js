@@ -1,0 +1,11 @@
+// styles/pages/_home.scss
+
+.home-container {
+    padding: 20px;
+    background-color: $background-color;
+
+    .welcome-message {
+        font-size: 24px;
+        color: $primary-color;
+    }
+}

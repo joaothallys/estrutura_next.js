@@ -27,12 +27,12 @@ const Providers = ({ children }: { children?: ReactNode }) => {
 
   return (
     <ThemeProvider attribute="class" enableSystem enableColorScheme>
-      <Provider store={atomStore}>
+      <Provider>
         <QueryClientProvider client={queryClientRef.current}>
           {children}
           <ThemedToastContainer />
           <ReactQueryDevtools buttonPosition="bottom-right" />
-          <DevTools store={atomStore} />
+          <DevTools />
         </QueryClientProvider>
       </Provider>
     </ThemeProvider>
