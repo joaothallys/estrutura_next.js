@@ -67,6 +67,7 @@ Abaixo está uma visão geral da estrutura de pastas do projeto atualizada:
   📄 not-found.tsx
   📄 error.tsx
   📄 favicon.ico
+  📄 index.js
 
 📂 components
   📂 common
@@ -83,8 +84,6 @@ Abaixo está uma visão geral da estrutura de pastas do projeto atualizada:
 📂 pages
   📂 api
   📄 _app.js
-  📄 _document.js
-  📄 index.tsx
 
 📂 public
   📂 favicons
@@ -126,3 +125,9 @@ Abaixo está uma visão geral da estrutura de pastas do projeto atualizada:
 
 4. **TypeScript**:
    - [W3Schools TypeScript tutorial](https://www.w3schools.com/typescript/)
+
+## Proximos passos
+
+- Para desenvolvimento da tela de home, o codigo será incluido no index.js na pasta **app**
+
+![alt text](image.png)

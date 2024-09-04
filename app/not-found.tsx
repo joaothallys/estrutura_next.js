@@ -9,7 +9,7 @@ export default async function NotFound() {
       <body className={inter.className}>
         <h2>Not Found</h2>
         <p>Could not find requested resource</p>
-        <Link href="/">Return Home</Link>
+        <Link href="/login">Return login</Link>
       </body>
     </html>
   );
