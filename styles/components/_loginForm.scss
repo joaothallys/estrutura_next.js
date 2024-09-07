@@ -4,76 +4,195 @@
     justify-content: center;
     align-items: center;
     background-color: #f7fafc;
-}
-
-.login-form {
-    max-width: 1080px;
-    /* Aumentei a largura máxima para dar mais espaço */
-    width: 100%;
-    /* Ajustei para caber dentro da largura máxima */
-    background-color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    /* Reduzi o border-radius para dar um formato mais retangular */
-    display: flex;
-    overflow: hidden;
-}
-
-.login-form__image {
-    width: 40%;
-    /* Ajustei a largura para 40% para uma distribuição mais equilibrada */
-    background-color: #e2e8f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 16px;
 }
 
-.login-form__content {
-    width: 60%;
-    /* Ajustei a largura para 60% para acomodar melhor os inputs e botões */
+.login-form {
+    display: flex;
+    max-width: 1080px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Modo responsivo: empilhar conteúdo em mobile */
+    @media (max-width: 768px) {
+        flex-direction: column;
+        max-width: 100%;
+        /* O modal ocupa 100% da largura da tela */
+        padding: 0;
+        /* Remover padding adicional para encaixar melhor no mobile */
+    }
+}
+
+.login-form__image {
+    flex: 1;
+    background-color: #edf2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 24px;
+
+    /* Esconder a imagem em dispositivos móveis */
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+}
+
+.login-form__content {
+    flex: 1;
+    padding: 40px;
     background-color: #1a202c;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* Ajuste de padding em dispositivos móveis */
+    @media (max-width: 768px) {
+        padding: 24px;
+        width: 100%;
+        /* O conteúdo ocupa 100% da tela */
+    }
 }
 
-.login-form__input {
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+
+    .login-form__input {
+        width: 500px;
+        padding: 12px 16px;
+        background-color: #2d3748;
+        border-radius: 8px;
+        color: white;
+        border: none;
+        outline: none;
+        padding-left: 40px;
+
+        &::placeholder {
+            color: #a0aec0;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            /* O input ocupa 100% da largura disponível em mobile */
+        }
+    }
+
+    .icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #a0aec0;
+    }
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    padding: 12px;
-    border-radius: 3px;
-    /* Reduzi o border-radius para um formato mais retangular */
-    background-color: #2d3748;
-    color: white;
-    margin-bottom: 16px;
-    border: none;
+    margin-bottom: 24px;
+
+    /* Em telas muito pequenas, os elementos de opções ficam empilhados */
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .login-form__link {
+            margin-bottom: 8px;
+        }
+    }
+
+    .login-form__link {
+        color: #63b3ed;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .remember-me {
+        display: flex;
+        align-items: center;
+
+        input {
+            margin-right: 8px;
+        }
+    }
 }
 
 .login-form__button {
-    width: 100%;
+    width: 560px;
+    height: 45px;
     padding: 12px;
     background-color: #3182ce;
     color: white;
     border: none;
-    border-radius: 3px;
-    /* Reduzi o border-radius para um formato mais retangular */
+    border-radius: 8px;
     cursor: pointer;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #2b6cb0;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        /* O botão ocupa 100% da largura em mobile */
+        height: 50px;
+        /* Ajuste na altura em mobile para melhor toque */
+    }
 }
 
-.login-form__button:hover {
-    background-color: #2b6cb0;
+.google-login {
+    width: 100%;
+
+    .google-login__button {
+        width: 100%;
+        padding: 12px;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+
+        .google-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            color: #db4437;
+        }
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+    }
 }
 
-.login-form__link {
-    color: #63b3ed;
-    text-decoration: none;
-}
+.signup-option {
+    margin-top: 16px;
 
-.login-form__link:hover {
-    text-decoration: underline;
+    .login-form__link {
+        color: #63b3ed;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

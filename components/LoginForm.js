@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import '../../estrutura_next.js/styles/components/_loginForm.scss';
 
 const LoginForm = () => {
@@ -8,70 +9,82 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // vamos montar aqui posterioirmente a logica de autenticação
+        // Adicionar lógica de autenticação aqui
     };
 
     return (
         <div className="login-container">
             <div className="login-form">
+                {/* Esconder a imagem em dispositivos móveis */}
                 <div className="login-form__image">
-                    <img
-                        src="/images/image_login.png"  // caminha da imagem
+                    <Image
+                        src="/images/loginPhoto.png"
                         alt="Login illustration"
-                        className="w-3/4"
+                        width={500}
+                        height={500}
+                        className="login-image"
                     />
                 </div>
 
                 <div className="login-form__content">
-                    <h2 className="text-3xl font-semibold mb-6">Bem-vindo de volta!</h2>
+                    <div className="logo">
+                        <Image
+                            src="/images/logo.svg"  // Caminho da sua logo SVG
+                            alt="Logo"
+                            width={337}  // Ajuste o tamanho conforme necessário
+                            height={128.95} // Ajuste o tamanho conforme necessário
+                        />
+                    </div>
+                    <h2 className="title">Bem-vindo de volta!</h2>
                     <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="login-form__input"
-                            placeholder="E-mail"
-                            required
-                        />
+                        <div className="input-group">
+                            <input
+                                type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="E-mail"
+                                required
+                                className="login-form__input"
+                            />
+                            <span className="icon">📧</span>
+                        </div>
 
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="login-form__input"
-                            placeholder="Senha"
-                            required
-                        />
+                        <div className="input-group">
+                            <input
+                                type="password"
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Senha"
+                                required
+                                className="login-form__input"
+                            />
+                            <span className="icon">🔒</span>
+                        </div>
 
-                        <div className="flex justify-between items-center mb-6">
-                            <label className="flex items-center">
+                        <div className="form-options">
+                            <a href="#" className="login-form__link">Esqueceu a senha?</a>
+                            <label className="remember-me">
                                 <input
                                     type="checkbox"
                                     checked={rememberMe}
                                     onChange={(e) => setRememberMe(e.target.checked)}
-                                    className="mr-2"
                                 />
                                 Lembrar senha
                             </label>
-                            <a href="#" className="login-form__link">
-                                Esqueceu a senha?
-                            </a>
                         </div>
 
-                        <button type="submit" className="login-form__button">
-                            Entrar
-                        </button>
+                        <button type="submit" className="login-form__button">Entrar</button>
 
-                        <div className="text-center mt-4">
-                            <p>Ainda não possui cadastro? <a href="#" className="login-form__link">Clique aqui!</a></p>
-                            <button
-                                type="button"
-                                className="login-form__button"
-                            >
-                                Entrar com Google
+                        <div className="google-login">
+                            <button type="button" className="google-login__button">
+                                <span className="google-icon">G</span> Entrar com Google
                             </button>
+                        </div>
+
+                        <div className="signup-option">
+                            Ainda não possui cadastro? <a href="#" className="login-form__link">Clique aqui!</a>
                         </div>
                     </form>
                 </div>
